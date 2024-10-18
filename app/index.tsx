@@ -9,7 +9,7 @@ interface Props {
 
 function RenderCard ({ title, text, logo }: Props) {
   return (
-    <View style={styles.item}>
+    <View style={[styles.item, styles.androidShadow, styles.shadowItem]}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.text}><Text style={{ fontWeight: "bold" }}>Опыт изучения: </Text>{text}</Text>
       <Image style={styles.logo} source={{ uri: logo}}/>
@@ -98,5 +98,19 @@ const styles = StyleSheet.create({
   logo: {
     width: 75,
     height: 75,
+  },
+
+  shadowItem: {
+    shadowColor: 'blue',
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+  },
+
+  androidShadow: {
+    elevation: 10,
   }
 });
